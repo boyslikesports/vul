@@ -14,19 +14,19 @@ Here, `v8` is derived from the input`curTime` . Since the length of `curTime` is
 
 #### Vulnerability Details
 
-**Affected Component**: Boa web server (used in DIR-513) 
+Affected Component: Boa web server (used in DIR-513) 
 
-**Vulnerable Function**: formLanguageChange
+Vulnerable Function: formLanguageChange
 
-**Trigger Point**: POST request to /goform/formLanguageChange
+Trigger Point: POST request to /goform/formLanguageChange
 
-**User Input**: curTime parameter in the POST body
+User Input: curTime parameter in the POST body
 
-**Vulnerable Code**: Use of sprintf() without bounds checking on user-controlled input
+Vulnerable Code: Use of sprintf() without bounds checking on user-controlled input
 
-**Stack Buffer**: v12 is a fixed-size buffer on the stack
+Stack Buffer: v12 is a fixed-size buffer on the stack
 
-**Impact：**
+Impact：
 
 - Denial of Service (DoS): Sending an overly long curTime value can overflow the buffer and overwrite the return address on the stack, causing the boa process to crash.
 - Remote Code Execution (RCE): With precise control over the input, an attacker may be able to overwrite the return address with a pointer to attacker-controlled code or a ROP chain, leading to full remote compromise of the device. 
