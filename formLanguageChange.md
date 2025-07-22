@@ -1,4 +1,4 @@
-#### Vulnerability Overview
+#### 1. Vulnerability Overview
 
 A stack-based buffer overflow vulnerability exists in the function formLanguageChange of the Boa web server, which is used to implement the web-based management interface in the DIR-513 embedded device.
 
@@ -12,7 +12,7 @@ Here, `v8` is derived from the input`curTime` . Since the length of `curTime` is
 
 
 
-#### Vulnerability Details
+#### 2. Vulnerability Details
 
 Affected Component: Boa web server (used in DIR-513) 
 
@@ -33,7 +33,7 @@ Impact：
 
 
 
-#### Proof of Concept (PoC) 
+#### 3. Proof of Concept (PoC) 
 
 ```
 POST /goform/formLanguageChange HTTP/1.1
