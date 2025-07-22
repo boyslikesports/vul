@@ -2,7 +2,7 @@
 
 A stack-based buffer overflow vulnerability exists in the function formLanguageChange of the Boa web server, which is used to implement the web-based management interface in the DIR-513 embedded device.
 
-This vulnerability is triggered when a remote attacker sends a specially crafted POST request to the endpoint /goform/formLanguageChange. The vulnerable function retrieves the parameter curTime from the request body and then uses it in a call to sprintf():
+This vulnerability is triggered when a remote attacker sends a specially crafted POST request to the endpoint `/goform/formLanguageChange`. The vulnerable function retrieves the parameter `curTime` from the request body and then uses it in a call to `sprintf()`:
 
 ```
 sprintf(v12, "%s?t=%s", "/index.asp", v8);
